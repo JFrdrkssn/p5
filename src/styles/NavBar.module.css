@@ -1,6 +1,25 @@
 .NavBar {
-  background-color: #a8df90;
+  background-color: #363732;
   padding: 2px;
   font-size: 0.9rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.NavLink {
+  text-decoration: none;
+  color: #dce1e9;
+  padding: 5px;
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.2);
+}
+
+.NavLink:hover {
+  color: #ffa62b;
+}
+
+.Active {
+  color: #53d8fb;
+}
+
+.Active i {
+  color: #53d8fb;
 }
