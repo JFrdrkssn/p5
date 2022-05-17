@@ -13,8 +13,12 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
-            <Nav.Link>Log in</Nav.Link>
-            <Nav.Link>Sign up</Nav.Link>
+            <Nav.Link>
+              <i className="fas fa-sign-in-alt"></i>Log in
+            </Nav.Link>
+            <Nav.Link>
+              <i className="fas fa-user-plus"></i>Sign up
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
