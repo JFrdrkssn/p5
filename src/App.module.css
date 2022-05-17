@@ -1,0 +1,10 @@
+.App {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  background-color: #fcfbf5;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
