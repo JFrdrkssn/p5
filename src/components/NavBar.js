@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import logo from "../assets/llama-logo.png";
+import logo from "../assets/logo-llama.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 
@@ -10,16 +10,22 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand className={styles.Brand}>
-            <img src={logo} alt="logo" height="55" />
+            <img src={logo} alt="logo" height="60" />
           </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
-            <NavLink to="/login">
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/login">
               <i className="fas fa-sign-in-alt"></i>Log in
             </NavLink>
-            <NavLink to="/signup">
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/signup">
               <i className="fas fa-user-plus"></i>Sign up
             </NavLink>
           </Nav>
