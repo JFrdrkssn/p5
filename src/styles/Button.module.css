@@ -1,0 +1,86 @@
+.Button {
+  font-size: 0.9rem;
+  font-weight: bold;
+  align-self: center;
+  border-radius: 100px;
+  box-shadow: 0 0 2px rgba(236, 232, 232, 0.6);
+  padding: 4px 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+  min-width: 75px;
+  transition: box-shadow ease-in-out 0.2s;
+  transition: opacity ease-in-out 0.2s;
+  transition: color ease-in-out 0.2s;
+}
+
+.Button:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 6px rgba(236, 232, 232, 0.6);
+  cursor: pointer;
+}
+
+.Button:hover:active {
+  color: #363732 !important;
+  background-color: #ffa62b !important;
+}
+
+.Button:active {
+  color: #363732 !important;
+  background-color: #ffa62b !important;
+}
+
+.Button:focus {
+  color: #363732;
+  background-color: #ffa62b;
+}
+
+.Wide {
+  padding: 10px 50px;
+  width: 100%;
+}
+
+.Blue,
+.BlueOutline:hover {
+  background-color: #53d8fb;
+  color: #363732;
+  box-shadow: 0 0 6px rgba(236, 232, 232, 0.6);
+}
+
+.BlueOutline,
+.Blue:hover {
+  /* border: 1px solid #2142b2; */
+  background-color: #ffffff;
+  color: #2142b2;
+}
+
+.Black,
+.BlackOutline:hover {
+  /* background-color: #242a3d;
+  color: white; */
+  background-color: #242a3d;
+  color: aliceblue;
+}
+
+.Black:hover,
+.BlackOutline {
+  /* background-color: #dadadf;
+  color: #242a3d;
+  border-color: #242a3d; */
+  background-color: aliceblue;
+  color: #242a3d;
+}
+
+.Bright {
+  background-color: #53d8fb;
+  color: #363732;
+  transition: box-shadow ease-in-out 0.1s;
+  transition: opacity ease-in-out 0.1s;
+  transition: background-color ease-in-out 0.1s;
+}
+
+.Bright:hover {
+  background-color: #ffa62b;
+  color: #363732;
+  box-shadow: 0 0 8px #ffa62b;
+  border-color: transparent;
+}
