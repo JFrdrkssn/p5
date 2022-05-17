@@ -1,13 +1,21 @@
 .App {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  background-color: #fcfbf5;
+  background-color: #282925;
   min-height: 100vh;
   color: #555555;
 }
 
 .Main {
   padding-top: 80px;
+}
+
+.Content {
+  background-color: #363732;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(236, 232, 232, 0.6);
+  transition: box-shadow ease-in-out 0.1s;
 }
 
 * {
@@ -40,4 +48,27 @@ i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #ffa62b;
+}
+
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
