@@ -3,6 +3,11 @@
   font-weight: 400;
   background-color: #fcfbf5;
   min-height: 100vh;
+  color: #555555;
+}
+
+.Main {
+  padding-top: 80px;
 }
 
 * {
