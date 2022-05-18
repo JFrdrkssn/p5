@@ -77,6 +77,7 @@
   transition: box-shadow ease-in-out 0.1s;
   transition: opacity ease-in-out 0.1s;
   transition: background-color ease-in-out 0.1s;
+  border-color: transparent !important;
 }
 
 .Bright:hover {
@@ -84,4 +85,10 @@
   color: #363732;
   box-shadow: 0 0 8px #ffa62b;
   border-color: transparent;
+}
+
+.Bright:focus {
+  background-color: #ffa62b !important;
+  color: #363732 !important;
+  box-shadow: 0 0 8px #ffa62b !important;
 }
