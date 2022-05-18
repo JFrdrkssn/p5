@@ -3,12 +3,30 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 import logo from "../assets/logo-llama.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../context/CurrentUserContext";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
+import axios from "axios";
 
 const NavBar = () => {
   // Variable to display current user in navbar
   const currentUser = useCurrentUser();
+
+  const setCurrentUser = useSetCurrentUser();
+
+  /* Handles user logout functionality.
+    Redirects to home in <NavLink> below.
+  */
+  const handleLogOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // Icons visible to non-logged in users
   const loggedOutIcons = (
@@ -43,7 +61,7 @@ const NavBar = () => {
         to="/liked">
         <i className="fas fa-heart"></i>Liked
       </NavLink>
-      <NavLink className={styles.NavLink} to="/" onClick={() => {}}>
+      <NavLink className={styles.NavLink} to="/" onClick={handleLogOut}>
         <i className="fas fa-sign-in-alt"></i>Log out
       </NavLink>
       <NavLink
