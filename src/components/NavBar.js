@@ -28,7 +28,23 @@ const NavBar = () => {
   );
 
   // Icons visible to logged in users
-  const loggedInIcons = <>{currentUser?.username}</>;
+  const loggedInIcons = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/feed">
+        <i className="fas fa-stream"></i>Feed
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/liked">
+        <i className="fas fa-heart"></i>Liked
+      </NavLink>
+      
+    </>
+  );
   const addPostIcon = (
     <NavLink
       className={styles.NavLink}
@@ -50,12 +66,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
-            <NavLink
-              to="/"
-              className={styles.NavLink}
-              activeClassName={styles.Active}>
-              {currentUser ? loggedInIcons : loggedOutIcons}
-            </NavLink>
+            {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
       </Container>
