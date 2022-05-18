@@ -14,7 +14,7 @@
   background-color: #363732;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 4px rgba(236, 232, 232, 0.6);
+  box-shadow: 0 0 2px rgba(236, 232, 232, 0.6);
   transition: box-shadow ease-in-out 0.1s;
 }
 
@@ -34,7 +34,7 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  background-color:  #363732 !important;
+  background-color: #363732 !important;
 }
 
 a:hover i {
