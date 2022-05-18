@@ -12,7 +12,6 @@ const NavBar = () => {
   // Icons visible to non-logged in users
   const loggedOutIcons = (
     <>
-      {" "}
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
@@ -30,6 +29,14 @@ const NavBar = () => {
 
   // Icons visible to logged in users
   const loggedInIcons = <>{currentUser?.username}</>;
+  const addPostIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/posts/create">
+      <i className="fas fa-plus"></i>Create post
+    </NavLink>
+  );
 
   return (
     <Navbar className={styles.NavBar} expand="md" fixed="top">
@@ -39,6 +46,7 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="60" />
           </Navbar.Brand>
         </NavLink>
+        {currentUser && addPostIcon}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
