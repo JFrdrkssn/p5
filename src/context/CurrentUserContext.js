@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { axiosRes } from "../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
 
 export const CurrentUserContext = createContext();
@@ -30,6 +30,26 @@ export const CurrentUserProvider = ({ children }) => {
   // Handles access tokens.
   // If token can't be refreshed, redirect to log in page.
   useMemo(() => {
+    axiosReq.interceptors.request.use(
+      async (config) => {
+        try {
+          await axios.post("dj-rest-auth/token/refresh/");
+        } catch (err) {
+          setCurrentUser((prevCurrentUser) => {
+            if (prevCurrentUser) {
+              history.push("/login");
+            }
+            return null;
+          });
+          return config;
+        }
+        return config;
+      },
+      (err) => {
+        return Promise.reject(err);
+      }
+    );
+
     axiosRes.interceptors.response.use(
       (response) => response,
       async (err) => {
@@ -49,7 +69,7 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(err);
       }
     );
-  });
+  }, [history]);
 
   return (
     // Get current user and function to update current user.
