@@ -12,14 +12,12 @@
   text-shadow: 0 1px 6px rgb(0 0 0 / 0.2);
 }
 
-.NavLink:hover {
-  color: #ffa62b;
-}
-
-.Active {
+.NavLink i {
   color: #53d8fb;
 }
 
+.NavLink:hover,
+.Active,
 .Active i {
-  color: #53d8fb;
+  color: #ffa62b;
 }
