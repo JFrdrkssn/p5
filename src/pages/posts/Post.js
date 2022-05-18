@@ -3,7 +3,7 @@ import styles from "../../styles/Post.module.css";
 import appStyles from "../../App.module.css";
 import navStyles from "../../styles/NavBar.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media } from "react-bootstrap";
+import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 
@@ -45,8 +45,41 @@ const Post = (props) => {
       </Link>
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
+        <hr />
         {content && <Card.Text>{content}</Card.Text>}
       </Card.Body>
+      <div className={`${styles.PostBar} text-right`}>
+        {is_owner ? (
+          <OverlayTrigger
+            placement="top"
+            overlay={
+              <Tooltip>We know you like your own post, but you can't!</Tooltip>
+            }>
+            <i className="far fa-heart" />
+          </OverlayTrigger>
+        ) : like_id ? (
+          <span onClick={() => {}}>
+            <i className="fas fa-heart" />
+          </span>
+        ) : currentUser ? (
+          <span onClick={() => {}}>
+            <i className="far fa-heart" />
+          </span>
+        ) : (
+          <OverlayTrigger
+            placement="top"
+            overlay={
+              <Tooltip>You have to be logged in to like a post!</Tooltip>
+            }>
+            <i className="far fa-heart" />
+          </OverlayTrigger>
+        )}
+        {likes_count}
+        <Link to={`/posts/${id}`}>
+          <i className="far fa-comments" />
+        </Link>
+        {comments_count}
+      </div>
     </Card>
   );
 };
