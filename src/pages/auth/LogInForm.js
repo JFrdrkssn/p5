@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Form, Alert, Container, Row, Col, Button } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import styles from "../../styles/LogInSignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { SetCurrentUserContext } from "../../App";
+import { useSetCurrentUser } from "../../context/CurrentUserContext";
 
 function LogInForm() {
   const [logInData, setLogInData] = useState({
@@ -13,7 +13,7 @@ function LogInForm() {
     password: "",
   });
 
-  const setCurrentUser = useContext(SetCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser();
 
   const { username, password } = logInData;
 
