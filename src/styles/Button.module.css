@@ -92,3 +92,26 @@
   color: #363732 !important;
   box-shadow: 0 0 8px #ffa62b !important;
 }
+
+.White {
+  background-color: #dce1e9;
+  color: #363732;
+  transition: box-shadow ease-in-out 0.2s;
+  transition: opacity ease-in-out 0.2s;
+  transition: background-color ease-in-out 0.2s;
+  transition: color ease-in-out 0.2s;
+  border-color: transparent !important;
+}
+
+.White:hover {
+  background-color: #b1b5bc;
+  color: #363732;
+  box-shadow: 0 0 2px #dce1e9;
+  border-color: transparent;
+}
+
+.White:focus {
+  background-color: #b1b5bc !important;
+  color: #363732 !important;
+  box-shadow: 0 0 8px #dce1e9 !important;
+}
