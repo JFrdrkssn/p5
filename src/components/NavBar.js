@@ -4,6 +4,7 @@ import logo from "../assets/logo-llama.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import { useCurrentUser } from "../context/CurrentUserContext";
+import Avatar from "./Avatar";
 
 const NavBar = () => {
   // Variable to display current user in navbar
@@ -42,7 +43,14 @@ const NavBar = () => {
         to="/liked">
         <i className="fas fa-heart"></i>Liked
       </NavLink>
-      
+      <NavLink className={styles.NavLink} to="/" onClick={() => {}}>
+        <i className="fas fa-sign-in-alt"></i>Log out
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        to={`/profile/${currentUser?.profile_id}`}>
+        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+      </NavLink>
     </>
   );
   const addPostIcon = (
