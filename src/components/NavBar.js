@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import logo from "../assets/logo-llama.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { CurrentUserContext } from "../App";
+import { useCurrentUser } from "../context/CurrentUserContext";
 
 const NavBar = () => {
   // Variable to display current user in navbar
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
 
   // Icons visible to non-logged in users
   const loggedOutIcons = (
