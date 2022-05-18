@@ -3,7 +3,7 @@
   font-weight: 400;
   background-color: #282925;
   min-height: 100vh;
-  color: #555555;
+  color: #dce1e9;
 }
 
 .Main {
@@ -23,7 +23,7 @@
 }
 
 a {
-  color: #555555;
+  color: #dce1e9;
   transition: color ease-in-out 0.3s;
 }
 
