@@ -10,3 +10,12 @@ h5 {
 .PostLiked {
   color: #ffa62b;
 }
+
+.CardImage {
+  display: flex;
+  object-fit: none;
+  width: min-content;
+  max-width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+}
