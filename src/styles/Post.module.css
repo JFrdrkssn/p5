@@ -11,6 +11,19 @@ h5 {
   color: #ffa62b;
 }
 
+.PostLiked:hover {
+  color: #dce1e9;
+}
+
+.NotLiked {
+  color: #53d8fb;
+}
+
+.OwnPostLike,
+.OwnPostLike:hover {
+  color: #ba3b46;
+}
+
 .CardImage {
   display: flex;
   object-fit: none;
