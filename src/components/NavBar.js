@@ -95,6 +95,7 @@ const NavBar = () => {
         <NavLink to="/">
           <Navbar.Brand className={styles.Brand}>
             <img src={logo} alt="logo" height="60" />
+            <span className={styles.BrandText}>llAMA</span>
           </Navbar.Brand>
         </NavLink>
         {currentUser && addPostIcon}
