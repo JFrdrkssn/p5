@@ -89,7 +89,7 @@ const Post = (props) => {
             overlay={
               <Tooltip>We know you like your own post, but you can't!</Tooltip>
             }>
-            <i className="far fa-heart" />
+            <i className="fas fa-heartbeat" />
           </OverlayTrigger>
         ) : like_id ? (
           <span onClick={handleUnlike}>
