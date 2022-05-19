@@ -1,0 +1,12 @@
+.PostIcons {
+  text-align: right;
+}
+
+.Post figure,
+h5 {
+  margin: 0 0;
+}
+
+.PostLiked {
+  color: #ffa62b;
+}
