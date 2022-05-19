@@ -89,15 +89,15 @@ const Post = (props) => {
             overlay={
               <Tooltip>We know you like your own post, but you can't!</Tooltip>
             }>
-            <i className="fas fa-heartbeat" />
+            <i className={`${styles.OwnPostLike} fas fa-heartbeat`} />
           </OverlayTrigger>
         ) : like_id ? (
           <span onClick={handleUnlike}>
-            <i className="fas fa-heart" />
+            <i className={`${styles.PostLiked} fas fa-heart`} />
           </span>
         ) : currentUser ? (
           <span onClick={handleLike}>
-            <i className={`far fa-heart ${styles.PostLiked}`} />
+            <i className={`${styles.NotLiked} far fa-heart`} />
           </span>
         ) : (
           <OverlayTrigger
