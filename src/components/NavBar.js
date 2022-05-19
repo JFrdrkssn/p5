@@ -62,7 +62,7 @@ const NavBar = () => {
         <i className="fas fa-heart"></i>Liked
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleLogOut}>
-        <i className="fas fa-sign-in-alt"></i>Log out
+        <i className="fas fa-sign-out-alt"></i>Log out
       </NavLink>
       <NavLink
         className={styles.NavLink}
