@@ -5,6 +5,14 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
+.BrandText {
+  font-family: "Indie Flower", sans-serif;
+  font-size: 1.8rem;
+  vertical-align: bottom;
+  margin-left: 6px;
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.2);
+}
+
 .NavLink {
   text-decoration: none;
   color: #dce1e9;
