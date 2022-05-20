@@ -4,7 +4,11 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import styles from "../../styles/PostPage.module.css";
 import appStyles from "../../App.module.css";
+import navStyles from "../../styles/NavBar.module.css";
+import Avatar from "../../components/Avatar";
+import { Link } from "react-router-dom";
 import Post from "./Post";
 
 function PostPage() {
@@ -19,11 +23,12 @@ function PostPage() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: post }] = await Promise.all([
+        const [{ data: post }, { data: comments }] = await Promise.all([
           axiosReq.get(`/posts/${id}`),
+          axiosReq.get(`/comments/?post=${id}`),
         ]);
         setPost({ results: [post] });
-        console.log(post);
+        setComments(comments);
       } catch (err) {
         console.log(err);
       }
@@ -49,6 +54,23 @@ function PostPage() {
           ) : comments.results.length ? (
             "Comments"
           ) : null}
+          {comments.results.length ? (
+            comments.results.map((comment) => (
+              <Container className={styles.CommentContainer}>
+                <Link
+                  className={navStyles.NavLink}
+                  to={`/profiles/${post.profile_id}`}>
+                  <Avatar src={profile_image} height={25} />
+                  {comment.owner}
+                </Link>
+                <p>{comment.content}</p>
+              </Container>
+            ))
+          ) : currentUser ? (
+            <span>Comment! Now!</span>
+          ) : (
+            <span>Crickets...</span>
+          )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
