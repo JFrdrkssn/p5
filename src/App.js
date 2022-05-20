@@ -23,7 +23,7 @@ function App() {
             exact
             path="/"
             render={() => (
-              <PostsPage message="No posts with that word found." />
+              <PostsPage message="No posts with matching text found." />
             )}
           />
           <Route
@@ -31,7 +31,7 @@ function App() {
             path="/feed"
             render={() => (
               <PostsPage
-                message="You are not following anyone."
+                message="No posts with matching text from users you are following."
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />
             )}
@@ -41,7 +41,7 @@ function App() {
             path="/liked"
             render={() => (
               <PostsPage
-                message="You have not liked any posts."
+                message="You have not liked any posts with matching text."
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
             )}
