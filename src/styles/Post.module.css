@@ -26,7 +26,7 @@ h5 {
 
 .CardImage {
   display: flex;
-  object-fit: none;
+  object-fit: contain;
   width: min-content;
   max-width: 100%;
   justify-content: center;
