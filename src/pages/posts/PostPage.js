@@ -4,12 +4,9 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import styles from "../../styles/PostPage.module.css";
 import appStyles from "../../App.module.css";
-import navStyles from "../../styles/NavBar.module.css";
-import Avatar from "../../components/Avatar";
-import { Link } from "react-router-dom";
 import Post from "./Post";
+import Comment from "../comments/Comment";
 
 function PostPage() {
   const { id } = useParams();
@@ -56,15 +53,7 @@ function PostPage() {
           ) : null}
           {comments.results.length ? (
             comments.results.map((comment) => (
-              <Container className={styles.CommentContainer}>
-                <Link
-                  className={navStyles.NavLink}
-                  to={`/profiles/${post.profile_id}`}>
-                  <Avatar src={profile_image} height={25} />
-                  {comment.owner}
-                </Link>
-                <p>{comment.content}</p>
-              </Container>
+              <Comment key={comment.id} {...comment} />
             ))
           ) : currentUser ? (
             <span>Comment! Now!</span>
