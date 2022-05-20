@@ -9,6 +9,7 @@
   transition: box-shadow ease-in-out 0.1s;
   box-shadow: 0 0 16px rgb(0 0 0 / 0.2);
   border-color: transparent;
+  color: #dce1e9;
 }
 
 .Input:focus {
