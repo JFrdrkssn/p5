@@ -80,7 +80,7 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/posts/create">
-      <i className="fas fa-plus"></i>Create post
+      <i className="fas fa-plus"></i>Post
     </NavLink>
   );
 
