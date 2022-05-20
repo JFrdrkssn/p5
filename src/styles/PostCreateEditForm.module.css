@@ -1,3 +1,24 @@
 .Container {
   min-height: 343px;
 }
+
+.Input {
+  background-color: #51534b;
+  padding: 10px;
+  border-radius: 10px;
+  transition: box-shadow ease-in-out 0.1s;
+  box-shadow: 0 0 16px rgb(0 0 0 / 0.2);
+  border-color: transparent;
+}
+
+.Input:focus {
+  background-color: #51534b;
+  color: #dce1e9;
+  padding: 10px;
+  border-radius: 10px;
+  transition: box-shadow ease-in-out 0.1s;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+}
