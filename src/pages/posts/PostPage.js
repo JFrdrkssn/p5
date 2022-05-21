@@ -7,6 +7,9 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import appStyles from "../../App.module.css";
 import Post from "./Post";
 import Comment from "../comments/Comment";
+import Asset from "../../components/Asset";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function PostPage() {
   const { id } = useParams();
@@ -38,7 +41,7 @@ function PostPage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <Post {...post.results[0]} setPosts={setPost} postPage />
+        <Post {...post.results[0]} setPost={setPost} postPage />
         <Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm
@@ -52,9 +55,20 @@ function PostPage() {
             "Comments"
           ) : null}
           {comments.results.length ? (
-            comments.results.map((comment) => (
-              <Comment key={comment.id} {...comment} />
-            ))
+            <InfiniteScroll
+              children={comments.results.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  {...comment}
+                  setPost={setPost}
+                  setComments={setComments}
+                />
+              ))}
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            />
           ) : currentUser ? (
             <span>Comment! Now!</span>
           ) : (
