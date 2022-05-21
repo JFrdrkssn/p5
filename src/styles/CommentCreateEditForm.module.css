@@ -6,6 +6,8 @@
   box-shadow: 0 0 16px rgb(0 0 0 / 0.2);
   border-color: transparent;
   color: #dce1e9;
+  height: 55px !important;
+  margin-top: 10px;
 }
 
 .Input:focus {
@@ -18,4 +20,5 @@
     0 2px 4px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1),
     0 8px 16px rgba(0, 0, 0, 0.05);
   border-color: transparent;
+  height: 65px !important;
 }
