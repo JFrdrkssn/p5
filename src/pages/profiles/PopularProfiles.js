@@ -8,7 +8,7 @@ import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Asset from "../../components/Asset";
 
-const PopularProfiles = () => {
+const PopularProfiles = ({ mobile }) => {
   const [profileData, setProfileData] = useState({
     pageProfile: { results: [] },
     popularProfiles: { results: [] },
@@ -35,22 +35,40 @@ const PopularProfiles = () => {
   }, [currentUser]);
 
   return (
-    <Container className={styles.PopularCard}>
+    <Container
+      className={`${styles.PopularCard} ${mobile && "d-lg-none text-center"}`}>
       {popularProfiles.results.length ? (
         <>
           <p>Top followed profiles</p>
-          {popularProfiles.results.map((profile) => (
-            <>
-              <Link
-                className={navStyles.NavLink}
-                to={`/profiles/${profile.id}`}>
-                <Avatar src={profile.image} height={20} />
-                <span key={profile.id}>{profile.owner}</span>
-              </Link>
-              <span className={styles.Count}>{profile.followers_count}</span>
-              <br />
-            </>
-          ))}
+          {mobile
+            ? popularProfiles.results.slice(0, 4).map((profile) => (
+                <>
+                  <Link
+                    className={navStyles.NavLink}
+                    to={`/profiles/${profile.id}`}>
+                    <Avatar src={profile.image} height={20} />
+                    <span key={profile.id}>{profile.owner}</span>
+                  </Link>
+                  <span className={styles.Count}>
+                    {profile.followers_count}
+                  </span>
+                  <br />
+                </>
+              ))
+            : popularProfiles.results.map((profile) => (
+                <>
+                  <Link
+                    className={navStyles.NavLink}
+                    to={`/profiles/${profile.id}`}>
+                    <Avatar src={profile.image} height={20} />
+                    <span key={profile.id}>{profile.owner}</span>
+                  </Link>
+                  <span className={styles.Count}>
+                    {profile.followers_count}
+                  </span>
+                  <br />
+                </>
+              ))}
         </>
       ) : (
         <Asset spinner />
