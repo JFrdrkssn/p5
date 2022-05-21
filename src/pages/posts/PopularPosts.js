@@ -8,7 +8,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Asset from "../../components/Asset";
 
-const PopularPosts = (props) => {
+const PopularPosts = ({ mobile }) => {
   const [postsData, setPostsData] = useState({
     pagePosts: { results: [] },
     popularPosts: { results: [] },
@@ -33,20 +33,32 @@ const PopularPosts = (props) => {
   }, [currentUser]);
 
   return (
-    <Container className={styles.PopularCard}>
+    <Container
+      className={`${styles.PopularCard} ${mobile && "d-lg-none text-center"}`}>
       {popularPosts.results.length ? (
         <>
           <p>Top commented posts</p>
-          {popularPosts.results.map((post) => (
-            <>
-              <Link className={navStyles.NavLink} to={`/posts/${post.id}`}>
-                <Avatar src={post.profile_image} height={20} />
-                <span key={post.id}>{post.title}</span>
-              </Link>
-              <span className={styles.Count}>{post.comments_count}</span>
-              <br />
-            </>
-          ))}
+          {mobile
+            ? popularPosts.results.slice(0, 4).map((post) => (
+                <>
+                  <Link className={navStyles.NavLink} to={`/posts/${post.id}`}>
+                    <Avatar src={post.profile_image} height={20} />
+                    <span key={post.id}>{post.title}</span>
+                  </Link>
+                  <span className={styles.Count}>{post.comments_count}</span>
+                  <br />
+                </>
+              ))
+            : popularPosts.results.map((post) => (
+                <>
+                  <Link className={navStyles.NavLink} to={`/posts/${post.id}`}>
+                    <Avatar src={post.profile_image} height={20} />
+                    <span key={post.id}>{post.title}</span>
+                  </Link>
+                  <span className={styles.Count}>{post.comments_count}</span>
+                  <br />
+                </>
+              ))}
         </>
       ) : (
         <Asset spinner />
