@@ -33,3 +33,10 @@ h5 {
   justify-content: center;
   margin: 0 auto;
 }
+
+.Date {
+  padding-left: 6px;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #dce1e9;
+}
