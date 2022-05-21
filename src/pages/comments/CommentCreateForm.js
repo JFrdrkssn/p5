@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import navStyles from "../../styles/NavBar.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
+  const currentUser = useCurrentUser();
 
   const handleChange = (event) => {
     setContent(event.target.value);
@@ -46,22 +46,20 @@ function CommentCreateForm(props) {
   return (
     <Form className={`${appStyles.Container} mt-2`} onSubmit={handleSubmit}>
       <Form.Group>
-        <InputGroup>
-          <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profileImage} />
-          </Link>
-          <Form.Control
-            className={styles.Input}
-            placeholder="Hmm..."
-            as="textarea"
-            value={content}
-            onChange={handleChange}
-            rows={2}
-          />
-        </InputGroup>
+        <Link to={`/profiles/${profile_id}`} className={navStyles.NavLink}>
+          <Avatar src={profileImage} height={35} text={currentUser?.username} />
+        </Link>
+        <Form.Control
+          className={styles.Input}
+          placeholder="Hmm..."
+          as="textarea"
+          value={content}
+          onChange={handleChange}
+          rows={2}
+        />
       </Form.Group>
       <button
-        className={`${btnStyles.Bright} ${btnStyles.Button} d-block ml-auto`}
+        className={`${btnStyles.Bright} ${btnStyles.Button} d-block ml-auto mb-4`}
         disabled={!content.trim()}
         type="submit">
         Comment
