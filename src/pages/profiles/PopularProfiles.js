@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/PopularCards.module.css";
-import navStyles from "../../styles/NavBar.module.css";
-import { Link } from "react-router-dom";
-import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Asset from "../../components/Asset";
+import Profile from "./Profile";
 
 const PopularProfiles = ({ mobile }) => {
   const [profileData, setProfileData] = useState({
@@ -40,35 +38,17 @@ const PopularProfiles = ({ mobile }) => {
       {popularProfiles.results.length ? (
         <>
           <p>Top followed profiles</p>
-          {mobile
-            ? popularProfiles.results.slice(0, 4).map((profile) => (
-                <>
-                  <Link
-                    className={navStyles.NavLink}
-                    to={`/profiles/${profile.id}`}>
-                    <Avatar src={profile.image} height={20} />
-                    <span key={profile.id}>{profile.owner}</span>
-                  </Link>
-                  <span className={styles.Count}>
-                    {profile.followers_count}
-                  </span>
-                  <br />
-                </>
-              ))
-            : popularProfiles.results.map((profile) => (
-                <>
-                  <Link
-                    className={navStyles.NavLink}
-                    to={`/profiles/${profile.id}`}>
-                    <Avatar src={profile.image} height={20} />
-                    <span key={profile.id}>{profile.owner}</span>
-                  </Link>
-                  <span className={styles.Count}>
-                    {profile.followers_count}
-                  </span>
-                  <br />
-                </>
+          {mobile ? (
+            <div className="d-flex justify-content-around">
+              {popularProfiles.results.slice(0, 4).map((profile) => (
+                <Profile key={profile.id} profile={profile} mobile />
               ))}
+            </div>
+          ) : (
+            popularProfiles.results.map((profile) => (
+              <Profile key={profile.id} profile={profile} />
+            ))
+          )}
         </>
       ) : (
         <Asset spinner />
