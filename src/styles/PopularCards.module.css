@@ -1,0 +1,16 @@
+.PopularCard {
+  margin-bottom: 14px;
+  background-color: #363732;
+  padding: 10px 10px 14px 10px;
+  border-radius: 10px;
+  transition: box-shadow ease-in-out 0.1s;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.2);
+  font-size: 0.9rem;
+}
+
+.Count {
+  padding-left: 10px;
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: #dce1e9;
+}
