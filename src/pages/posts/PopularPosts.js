@@ -33,32 +33,20 @@ const PopularPosts = ({ mobile }) => {
   }, [currentUser]);
 
   return (
-    <Container
-      className={`${styles.PopularCard} ${mobile && "d-lg-none text-center"}`}>
+    <Container className={styles.PopularCard}>
       {popularPosts.results.length ? (
         <>
           <p>Top commented posts</p>
-          {mobile
-            ? popularPosts.results.slice(0, 4).map((post) => (
-                <>
-                  <Link className={navStyles.NavLink} to={`/posts/${post.id}`}>
-                    <Avatar src={post.profile_image} height={20} />
-                    <span key={post.id}>{post.title}</span>
-                  </Link>
-                  <span className={styles.Count}>{post.comments_count}</span>
-                  <br />
-                </>
-              ))
-            : popularPosts.results.map((post) => (
-                <>
-                  <Link className={navStyles.NavLink} to={`/posts/${post.id}`}>
-                    <Avatar src={post.profile_image} height={20} />
-                    <span key={post.id}>{post.title}</span>
-                  </Link>
-                  <span className={styles.Count}>{post.comments_count}</span>
-                  <br />
-                </>
-              ))}
+          {popularPosts.results.map((post) => (
+            <>
+              <Link className={navStyles.NavLink} to={`/posts/${post.id}`}>
+                <Avatar src={post.profile_image} height={20} />
+                <span key={post.id}>{post.title}</span>
+              </Link>
+              <span className={styles.Count}>{post.comments_count}</span>
+              <br />
+            </>
+          ))}
         </>
       ) : (
         <Asset spinner />
