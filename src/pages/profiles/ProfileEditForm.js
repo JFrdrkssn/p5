@@ -12,7 +12,7 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
-import styles from "../../styles/ProfileEditForm.module.css";
+import inputStyles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -91,7 +91,7 @@ const ProfileEditForm = () => {
           onChange={handleChange}
           name="content"
           rows={7}
-          className={styles.Input}
+          className={inputStyles.Input}
         />
       </Form.Group>
 

@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import styles from "../../styles/ProfileEditForm.module.css";
+import inputStyles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -63,7 +63,7 @@ const UserPasswordForm = () => {
                 value={new_password1}
                 onChange={handleChange}
                 name="new_password1"
-                className={styles.Input}
+                className={inputStyles.Input}
               />
             </Form.Group>
             {errors?.new_password1?.map((message, idx) => (
@@ -79,7 +79,7 @@ const UserPasswordForm = () => {
                 value={new_password2}
                 onChange={handleChange}
                 name="new_password2"
-                className={styles.Input}
+                className={inputStyles.Input}
               />
             </Form.Group>
             {errors?.new_password2?.map((message, idx) => (
