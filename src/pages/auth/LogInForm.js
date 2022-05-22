@@ -55,7 +55,7 @@ function LogInForm() {
 
   return (
     <Row className={styles.Row}>
-      <Col className="my-auto p-0 p-md-2 offset-3" md={6}>
+      <Col className="my-auto p-2 p-md-2 offset-md-2" md={8}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>log in</h1>
 
