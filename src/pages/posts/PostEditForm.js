@@ -120,11 +120,13 @@ function PostEditForm() {
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        onMouseDown={(event) => event.preventDefault()}
         type="submit">
         Save
       </Button>
       <Button
         className={`${btnStyles.Button} ${btnStyles.White}`}
+        onMouseDown={(event) => event.preventDefault()}
         onClick={() => history.goBack()}>
         Cancel
       </Button>

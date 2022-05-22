@@ -60,6 +60,7 @@ function CommentCreateForm(props) {
       </Form.Group>
       <button
         className={`${btnStyles.Bright} ${btnStyles.Button} d-block ml-auto mb-4`}
+        onMouseDown={(event) => event.preventDefault()}
         disabled={!content.trim()}
         type="submit">
         Comment

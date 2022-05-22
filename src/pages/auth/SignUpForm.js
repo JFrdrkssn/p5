@@ -98,6 +98,7 @@ const SignUpForm = () => {
 
             <Button
               className={`${btnStyles.Button} ${btnStyles.Bright} ${btnStyles.Wide}`}
+              onMouseDown={(event) => event.preventDefault()}
               type="submit">
               CREATE ACCOUNT
             </Button>

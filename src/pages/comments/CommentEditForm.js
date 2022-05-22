@@ -52,12 +52,14 @@ function CommentEditForm(props) {
         <button
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
           disabled={!content.trim()}
+          onMouseDown={(event) => event.preventDefault()}
           type="submit">
           Save
         </button>
         <button
           className={btnStyles.Button}
           onClick={() => setShowEditForm(false)}
+          onMouseDown={(event) => event.preventDefault()}
           type="button">
           Cancel
         </button>
