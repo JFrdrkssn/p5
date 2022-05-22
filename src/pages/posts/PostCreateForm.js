@@ -15,6 +15,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
@@ -28,6 +29,7 @@ function PostCreateForm() {
 
   const imageInput = useRef(null);
   const history = useHistory();
+  useRedirect("loggedOut");
 
   const handleChange = (event) => {
     setPostData({
