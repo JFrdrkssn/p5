@@ -26,7 +26,7 @@ const Profile = (props) => {
           className={`${navStyles.NavLink} align-self-center`}
           to={`/profiles/${id}`}>
           <Avatar src={image} height={imageSize} />
-          <strong>{owner}</strong>
+          <span>{owner}</span>
           <span className={`${styles.Count} pl-2`}>{followers_count}</span>
         </Link>
       </div>
