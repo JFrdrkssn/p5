@@ -6,6 +6,7 @@ import styles from "../../styles/LogInSignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function LogInForm() {
   const [logInData, setLogInData] = useState({
@@ -20,6 +21,8 @@ function LogInForm() {
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
+
+  useRedirect("loggedIn");
 
   const handleChange = (event) => {
     setLogInData({
@@ -37,7 +40,7 @@ function LogInForm() {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
-      history.push("/");
+      history.goBack();
     } catch (err) {
       setErrors(err.response?.data);
     }
