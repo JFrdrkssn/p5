@@ -13,6 +13,7 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useHistory } from "react-router-dom";
 
 function PostPage() {
   const { id } = useParams();
@@ -22,6 +23,7 @@ function PostPage() {
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
+  const history = useHistory();
 
   useEffect(() => {
     const handleMount = async () => {
@@ -34,11 +36,14 @@ function PostPage() {
         setComments(comments);
       } catch (err) {
         console.log(err);
+        if (err.response?.status !== 404) {
+          history.replace("/");
+        }
       }
     };
 
     handleMount();
-  }, [id]);
+  }, [id, history]);
 
   return (
     <Row className="h-100">
