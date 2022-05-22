@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Container } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import CommentCreateForm from "../comments/CommentCreateForm";

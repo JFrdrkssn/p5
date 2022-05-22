@@ -1,9 +1,12 @@
 import React from "react";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import styles from "../../styles/Post.module.css";
 import appStyles from "../../App.module.css";
 import navStyles from "../../styles/NavBar.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";

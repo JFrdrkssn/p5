@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Media } from "react-bootstrap";
+import Media from "react-bootstrap/Media";
 import styles from "../../styles/Comment.module.css";
 import navStyles from "../../styles/NavBar.module.css";
 import { Link } from "react-router-dom";

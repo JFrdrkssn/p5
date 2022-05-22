@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import styles from "../../styles/PopularCards.module.css";
 import Asset from "../../components/Asset";
 import Profile from "./Profile";

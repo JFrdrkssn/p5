@@ -1,5 +1,7 @@
 import React from "react";
-import { Dropdown, OverlayTrigger, Tooltip } from "react-bootstrap";
+import Dropdown from "react-bootstrap/Dropdown";
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import styles from "../styles/MoreDropdown.module.css";
 import appStyles from "../App.module.css";
 import { useHistory } from "react-router";

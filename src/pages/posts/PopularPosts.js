@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import styles from "../../styles/PopularCards.module.css";
 import navStyles from "../../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
