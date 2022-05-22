@@ -40,37 +40,6 @@
   width: 100%;
 }
 
-.Blue,
-.BlueOutline:hover {
-  background-color: #53d8fb;
-  color: #363732;
-  box-shadow: 0 0 6px rgba(236, 232, 232, 0.6);
-}
-
-.BlueOutline,
-.Blue:hover {
-  /* border: 1px solid #2142b2; */
-  background-color: #ffffff;
-  color: #2142b2;
-}
-
-.Black,
-.BlackOutline:hover {
-  /* background-color: #242a3d;
-  color: white; */
-  background-color: #242a3d;
-  color: aliceblue;
-}
-
-.Black:hover,
-.BlackOutline {
-  /* background-color: #dadadf;
-  color: #242a3d;
-  border-color: #242a3d; */
-  background-color: aliceblue;
-  color: #242a3d;
-}
-
 .Bright {
   background-color: #53d8fb;
   color: #363732;
