@@ -74,6 +74,9 @@ function App() {
             render={() => <ProfileEditForm />}
           />
           <Route render={() => <NotFound />} />
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       </Container>
     </div>
