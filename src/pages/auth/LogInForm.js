@@ -109,7 +109,7 @@ function LogInForm() {
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
-            <span>Sign up</span> if you don't have an account.
+            <span>Sign up</span> if you don&apos;t have an account.
           </Link>
         </Container>
       </Col>
