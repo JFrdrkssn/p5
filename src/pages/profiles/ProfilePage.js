@@ -21,6 +21,7 @@ import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import { useHistory } from "react-router-dom";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -31,6 +32,7 @@ function ProfilePage() {
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
+  const history = useHistory();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,11 +50,17 @@ function ProfilePage() {
         setHasLoaded(true);
       } catch (err) {
         // console.log(err);
+        if (err.response?.status !== 404) {
+          history.replace("/");
+        }
+        if (err.response?.status !== 400) {
+          history.replace("/");
+        }
       }
     };
 
     fetchData();
-  }, [id, setProfileData]);
+  }, [id, setProfileData, history]);
 
   const mainProfile = (
     <>

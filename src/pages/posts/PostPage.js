@@ -39,6 +39,9 @@ function PostPage() {
         if (err.response?.status !== 404) {
           history.replace("/");
         }
+        if (err.response?.status !== 400) {
+          history.replace("/");
+        }
       }
     };
 
