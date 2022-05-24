@@ -462,10 +462,11 @@ Lighthouse
 
 ### **Error Handling**
 
-| Test | Action                   | Expected Result                                                                                                                                                                | Pass |
-| ---- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- |
-| 404  | Wrong URL                | If page does not exist, display custom component on page with information.                                                                                                     | ✓    |
-| 404  | ID of posts non-existent | Manually entering a post/id URL that is non-existent, redirect to homepage and clear browser history (404 is not displayed because of routing issues concerning dynamic ID's). | ✓    |
+| Test | Action                      | Expected Result                                                                                                                                                                    | Pass |
+| ---- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| 404  | Wrong URL                   | If page does not exist, display custom component on page with information.                                                                                                         | ✓    |
+| 404  | ID of posts non-existent    | Manually entering a posts/id URL that is non-existent, redirect to homepage and clear browser history (404 is not displayed because of routing issues concerning dynamic ID's).    | ✓    |
+| 404  | ID of profiles non-existent | Manually entering a profiles/id URL that is non-existent, redirect to homepage and clear browser history (404 is not displayed because of routing issues concerning dynamic ID's). | ✓    |
 
 <br/><br/>
 
