@@ -207,3 +207,29 @@ For this project the GitHub Kanban agile project management tool was used for wo
 [Kanban](src/assets/screenshots/kanban.png)
 
 <br/><br/>
+
+# **Future Features**
+
+<br/>
+
+## _These features are planned:_
+
+<br/>
+
+- Categories
+  - Categories to list posts of certain categories and allow users to select category when creating a post.
+    <br/><br/>
+- Profile page additions
+  - Additional fields where users can add more info about themselves.
+    <br/><br/>
+- Nested comment system
+  - A system for replying to certain comments and create threads.
+    <br/><br/>
+- Most commented posts
+  - With nested comments, displaying a list of most commented posts would allow easy access to the posts with the most active conversations.
+    <br/><br/>
+- Social account authentication
+  - Allow user authentication with already created accounts, for example Google accounts.
+    <br/><br/>
+
+<br/><br/>
