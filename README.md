@@ -301,7 +301,7 @@ The W3C Markup Validator, W3C CSS Validator Services, ESLint and PEP8 were used 
   - [HTML](src/assets/screenshots/html-val.png)
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) show no errors.
   - [CSS](src/assets/screenshots/css-val.png)
-- [ESLint](https://eslint.org/) show no significant issues\*.
+- [ESLint](https://eslint.org/) show no significant issues.
   <br/><br/>
 
 Lighthouse
@@ -496,14 +496,6 @@ A couple of small bugs concerning redirects and API calls were due to typos in U
 <br/>
 
 - None
-
-<br/><br/>
-
-### **\*NOTE ON ESLINT**
-
-<br/>
-
-ESLint was installed (with the React plugin and recommended settings) to check JSX code. It did pass without significant issues, but due to time constraint I had no time to really check version compability, settings etc (the latest version should be compatible with React 17, which this project uses), and some other problems arose. My mentor and I checked the code with ESLint installed (which can be seen in the commit history) and there was nothing to note with the code itself, except escaping a single quote which can be found in [this](https://github.com/JFrdrkssn/llama/commit/5b76a63f64cd9dc306dac69b3a1953b555961b4c) commit. It did however throw errors when running the dev server, this was temporarily fixed, but then I had to push and deploy a bug fix. When deploying to Heroku, ESLint was causing lots of issues with the Heroku build and it could not be deployed. Checking with both my mentor, tutors and Googling didn't come up with a clear and quick answer to why and, again because of time constraint, I have uninstalled it for now.
 
 <br/><br/>
 
