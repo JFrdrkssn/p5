@@ -233,3 +233,11 @@ For this project the GitHub Kanban agile project management tool was used for wo
     <br/><br/>
 
 <br/><br/>
+
+# **API**
+
+<br/>
+
+The backend API is built specifically for this frontend with Django REST Framework. The repository and info on how the two are connected can be found in the Deployment section of [this](https://github.com/JFrdrkssn/llama-be) repo's README.
+
+<br/><br/>
