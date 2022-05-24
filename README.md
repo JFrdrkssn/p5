@@ -505,3 +505,60 @@ A couple of small bugs concerning redirects and API calls were due to typos in U
 ESLint was installed (with the React plugin and recommended settings) to check JSX code. It did pass without significant issues, but due to time constraint I had no time to really check version compability, settings etc (the latest version should be compatible with React 17, which this project uses), and some other problems arose. My mentor and I checked the code with ESLint installed (which can be seen in the commit history) and there was nothing to note with the code itself, except escaping a single quote which can be found in [this](https://github.com/JFrdrkssn/llama/commit/5b76a63f64cd9dc306dac69b3a1953b555961b4c) commit. It did however throw errors when running the dev server, this was temporarily fixed, but then I had to push and deploy a bug fix. When deploying to Heroku, ESLint was causing lots of issues with the Heroku build and it could not be deployed. Checking with both my mentor, tutors and Googling didn't come up with a clear and quick answer to why and, again because of time constraint, I have uninstalled it for now.
 
 <br/><br/>
+
+# **Deployment**
+
+<br/>
+
+### **\*Note**:
+
+- It is currently not possible to link GitHub repositories with Heroku in the way described below, but as of this date, 24th May, it will be re-enabled this week (week 21 2022). It is therefore recommended to wait until this feature has been re-enabled before connecting Heroku with your GitHub repository. This will greatly simplify the deployment.
+
+<br/>
+
+## **Development**
+
+1.  Clone [this repository](https://github.com/JFrdrkssn/llama).
+2.  Open your IDE and connect to your repo, then enter this command in the terminal:
+
+        npm install
+
+- Make sure your package.json dependencies look like this:
+
+      "dependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^11.2.7",
+        "@testing-library/user-event": "^13.5.0",
+        "axios": "^0.27.2",
+        "bootstrap": "^4.6.0",
+        "jwt-decode": "^3.1.2",
+        "react": "^17.0.2",
+        "react-bootstrap": "^1.6.3",
+        "react-dom": "^17.0.2",
+        "react-infinite-scroll-component": "^6.1.0",
+        "react-router-dom": "^5.3.0",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+      },
+
+3.  Git add, commit and push all changes to your repo.
+4.  Create or log in to an account on Heroku.
+5.  Create a new app on Heroku.
+6.  In the Deploy section on Heroku, go to Deployment method and add your GitHub repository.
+7.  Go down to Manual deploy and select deploy branch for early deployment.
+8.  To run your app locally, enter this command in your terminal:
+
+            npm run dev
+
+    <br/>
+
+## **Production**
+
+1.  To create a production build, enter this command in your terminal:
+
+        npm run build
+
+2.  Git add, commit and push to your repo.
+3.  In the Deploy section on Heroku, go to Manual deploy and select deploy branch.
+4.  Go to the Settings tab and scroll down to Domains where you find the URL to your deployed site.
+    <br/><br/>
