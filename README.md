@@ -395,3 +395,76 @@ Lighthouse
       <br/><br/>
 
 <br/><br/>
+
+## **Manual Testing**
+
+<br/>
+
+### **Navigation**
+
+| Test               | Action                                       | Expected Result                                                                                                                   | Pass |
+| ------------------ | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| Site logo          | Click logo                                   | Take the user to the home page.                                                                                                   | ✓    |
+| Log in navbar      | Click "Log in" link                          | Take the user to the log in page.                                                                                                 | ✓    |
+| Log in page        | Click "Log in" button                        | If user logs in, redirect to home.                                                                                                | ✓    |
+| Log in page        | Click "Sign up" link                         | Take the user to the sign up page.                                                                                                | ✓    |
+| Sign up navbar     | Click "Sign up" link                         | Take the user to the sign up page.                                                                                                | ✓    |
+| Sign up page       | Click "Sign up" button                       | If user signs up, redirect to log in page.                                                                                        | ✓    |
+| Sign up page       | Click "Log in" link                          | Take the user to the log in page.                                                                                                 | ✓    |
+| Sign up/log in     | Enter URL for sign up/log in while logged in | Redirects user to home page.                                                                                                      | ✓    |
+| Log out navbar     | Click "Log out" link                         | Log out user and redirect to home page.                                                                                           | ✓    |
+| Create post navbar | Click "+Post" link                           | When logged in, takes the user to the create post page.                                                                           | ✓    |
+| Create post page   | Click "Create" button                        | If user creates post, redirect to this post.                                                                                      | ✓    |
+| Post "Feed" navbar | Click "Feed" link                            | Render list of posts from users the user is following.                                                                            | ✓    |
+| Post "Liked"       | Click "Liked" link                           | Render list of posts the user has liked.                                                                                          | ✓    |
+| Profile navbar     | Click profile image or name                  | Take user to user's profile page                                                                                                  | ✓    |
+| Profile site-wide  | Click profile image or name                  | Take user to the clicked user's profile page.                                                                                     | ✓    |
+| Edit post          | Click edit icon in dropdown                  | Take user to edit post page.                                                                                                      | ✓    |
+| Edit post page     | Click "Save" button                          | Take user to newly edited post.                                                                                                   | ✓    |
+| Edit post page     | Click "Cancel" button                        | Take user back to the post.                                                                                                       | ✓    |
+| Delete post        | Click delete icon in dropdown                | Delete post and take user to previous page.                                                                                       | ✓    |
+| Infinite scroll    | Scrolling to end of page                     | Render new posts and/or comments if there's more than 10 of any.                                                                  | ✓    |
+| Unauthorized       | Visit page unauthorized                      | Reaching a create, edit or delete page through URL manipulation to content the user is not authorized for, redirect to home page. | ✓    |
+
+<br/><br/>
+
+### **Features**
+
+| Test            | Action                 | Expected Result                                                                                                          | Pass |
+| --------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------ | ---- |
+| Like/unlike     | Click like icon        | When clicked, increment/decrement like counter and to liked posts.                                                       | ✓    |
+| Like/unlike     | Click like icon        | When clicked, liked posts appear in "Liked" list view. Unliked posts disappear from "Liked" list view.                   | ✓    |
+| Follow/unfollow | Click "Follow" button  | When clicked, increment/decrement follower/following counter and add to user followers or following lists.               | ✓    |
+| Follow/unfollow | Click "Follow" button  | When clicked, followed user's posts appear in "Feed" list view. Unfollowed user's posts disappear from "Feed" list view. | ✓    |
+| Comment         | Click "Comment" button | When clicked, increment comment count and add comment.                                                                   | ✓    |
+| Comment         | Comment icon           | Take user to the specific post and display comments with username and date of comment.                                   | ✓    |
+
+<br/><br/>
+
+### **Validation**
+
+| Test        | Action               | Expected Result                                                                                                                         | Pass |
+| ----------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| Sign up     | Form valid           | If the form is valid, user is redirected to log in page.                                                                                | ✓    |
+| Sign up     | Form invalid         | If the form is NOT valid, i.e required field not filled, wrong password format or duplicate username the user is notified of the error. | ✓    |
+| Log in      | Form valid           | If the form is valid, user is redirected to home page.                                                                                  | ✓    |
+| Log in      | Form invalid         | If the form is NOT valid, i.e required field not filled or wrong password, the user is notified of the error.                           | ✓    |
+| Log out     | Logging out          | If the user logs out, the navbar reflects the change and functions reserved for logged in users are not displayed.                      | ✓    |
+| Create post | Create form valid    | If the form is valid, user is redirected to the newly created post.                                                                     | ✓    |
+| Create post | Create form invalid  | If the form is NOT valid, i.e required field not filled or title already exist the user is notified of the error.                       | ✓    |
+| Edit post   | Edit form valid      | If the form is valid, user is redirected to the newly edited post.                                                                      | ✓    |
+| Edit post   | Edit form invalid    | If the form is NOT valid, the user is notified of the error.                                                                            | ✓    |
+| Delete post | Deleting post        | If the user deletes a post, take user to its profile page.                                                                              | ✓    |
+| Comment     | Comment form valid   | If the form is valid, a new comment is created.                                                                                         | ✓    |
+| Comment     | Comment form invalid | If the form is empty, clicking "Comment" button does nothing.                                                                           | ✓    |
+
+<br/><br/>
+
+### **Error Handling**
+
+| Test | Action                   | Expected Result                                                                                                                                                                | Pass |
+| ---- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- |
+| 404  | Wrong URL                | If page does not exist, display custom component on page with information.                                                                                                     | ✓    |
+| 404  | ID of posts non-existent | Manually entering a post/id URL that is non-existent, redirect to homepage and clear browser history (404 is not displayed because of routing issues concerning dynamic ID's). | ✓    |
+
+<br/><br/>
