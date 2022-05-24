@@ -468,3 +468,40 @@ Lighthouse
 | 404  | ID of posts non-existent | Manually entering a post/id URL that is non-existent, redirect to homepage and clear browser history (404 is not displayed because of routing issues concerning dynamic ID's). | ✓    |
 
 <br/><br/>
+
+## **Bugs**
+
+<br/>
+
+### Fixed
+
+- When trying to create a post without attaching an image, the form was invalid despite being declared with a default image and allowing a blank field in the backend model field.
+
+  - Fix: Add if-statement to form validation.
+
+- Following and/or unfollowing an other user did not change the "Following" count on user's profile page.
+  - Fix: A typo in `following_count:` in utils.js file was corrected.
+
+![Image form validation](src/assets/screenshots/image-form.png)
+
+- Trying to log in on the Safari browser refreshes the page. This is because Safari is not setting the http-only cookie and localStorage timestamp. React cannot authenticate itself to the API.
+  - Fix: In the privacy settings of your Safari browser, ticking off "Prevent cross-site tracking" works.
+
+A couple of small bugs concerning redirects and API calls were due to typos in URL paths.
+<br/><br/>
+
+### Remaining Found Bugs
+
+<br/>
+
+- None
+
+<br/><br/>
+
+### **\*NOTE ON ESLINT**
+
+<br/>
+
+ESLint was installed (with the React plugin and recommended settings) to check JSX code. It did pass without significant issues, but due to time constraint I had no time to really check version compability, settings etc (the latest version should be compatible with React 17, which this project uses), and some other problems arose. My mentor and I checked the code with ESLint installed (which can be seen in the commit history) and there was nothing to note with the code itself, except escaping a single quote which can be found in [this](https://github.com/JFrdrkssn/llama/commit/5b76a63f64cd9dc306dac69b3a1953b555961b4c) commit. It did however throw errors when running the dev server, this was temporarily fixed, but then I had to push and deploy a bug fix. When deploying to Heroku, ESLint was causing lots of issues with the Heroku build and it could not be deployed. Checking with both my mentor, tutors and Googling didn't come up with a clear and quick answer to why and, again because of time constraint, I have uninstalled it for now.
+
+<br/><br/>
