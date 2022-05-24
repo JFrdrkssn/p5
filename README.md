@@ -563,3 +563,29 @@ ESLint was installed (with the React plugin and recommended settings) to check J
 3.  In the Deploy section on Heroku, go to Manual deploy and select deploy branch.
 4.  Go to the Settings tab and scroll down to Domains where you find the URL to your deployed site.
     <br/><br/>
+
+# **Credits**
+
+<br/>
+
+## **Code**
+
+- This project was built using React. The source code and styling is from Code Institute's social media walkthrough project [GitHub](https://github.com/Code-Institute-Solutions/moments). I decided to base the UI and functionality of llAMA on this walkthrough project since it was a great fit for the application I had planned and it provides a great foundation to expand upon.
+  <br/><br/>
+
+## **Content**
+
+- The structure and layout of this README.md was based on [this template](https://github.com/Code-Institute-Solutions/SampleREADME) by [Code Institute](https://codeinstitute.net/). Some text was also copied. Additional inspiration for this README.md was given from other templates in Code Institute's course curriculum and previous student and alumnus Christopher Goodfellow and his [Tarmachan](https://github.com/Tawnygoody/Tarmachan) project.
+  <br/><br/>
+
+## **Media**
+
+- llAMA logo by me using [Canva](https://www.canva.com/).
+- Default profile image and default post image from [Code Institute](https://codeinstitute.net/) course material.
+  <br/><br/>
+
+## **Acknowledgements**
+
+- My Mentor, Martina Terlevic, for continuous helpful feedback and support.
+- [Code Institute](https://codeinstitute.net/) tutors for help with various issues.
+- [Stack Overflow](https://stackoverflow.com/) for all kinds of tips and tricks.
