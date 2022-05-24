@@ -290,3 +290,108 @@ The backend API is built specifically for this frontend with Django REST Framewo
 - [MSW](https://mswjs.io/)
   - MSW for testing purposes.
     <br/><br/>
+
+# **Testing**
+
+<br/>
+
+The W3C Markup Validator, W3C CSS Validator Services, ESLint and PEP8 were used to validate code.
+
+- [W3C Markup Validator](https://validator.w3.org/) show no errors.
+  - [HTML](src/assets/screenshots/html-val.png)
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) show no errors.
+  - [CSS](src/assets/screenshots/css-val.png)
+- [ESLint](https://eslint.org/) show no significant issues\*.
+  <br/><br/>
+
+Lighthouse
+
+![Lighthouse](src/assets/screenshots/lighthouse.png)
+
+<br/><br/>
+
+## **Testing User Stories from Agile section**
+
+<br/>
+
+- ### **Navigating the site**
+
+  - As a user, I can view a navbar from every page so that I can easily navigate between pages.
+    - Navbar is always visible and links display active states if user is on navbar link URLs.
+  - As a user, I can clearly see if I'm logged in/out so that I can log/sign in/out.
+    - If a user is not logged in, Log in and Sign up links are displayed. If a user is logged in, display links to profile page, log out, feed of followed user posts and liked posts feed.
+  - As a user, I can see user avatars so that I can easily identify users of the application.
+    - User profile images and names are displayed across the application on most content. They also link to the user's profile page.
+  - As a user, I can see a list of the most followed profiles so that I can find the most popular profiles.
+    - A list of the most followed profiles with follower count, listed in a descending order on desktop and from left to right on mobile, is always displayed. On desktop there's a button to follow/unfollow. On both desktop and mobile the users in the list view are links to that specific profile, where you can also choose to follow/unfollow.
+      <br/><br/>
+
+- ### **User authentication**
+
+  - As a user, I can create a new account so that I can access all the features for signed up users.
+    - In the navbar there's a link to the Sign up page where users can create an account.
+  - As a user, I can log in to the app so that I can access functionality for logged in users.
+    - In the navbar there's a link to the Log in page where users can log in with their account.
+  - As a user, I can maintain my logged-in status until I choose to log out so that my user experience is not compromised.
+    - Users stay logged in for 24 hours unless choosing to log out themselves.
+      <br/><br/>
+
+- #### **Posting and liking posts**
+
+  - As a logged in user, I can create posts so that I can share my experiences.
+    - In the navbar there's a link to the Post create page where users can create a post.
+  - As a logged in user, I can like a post so that I can declare my support for posts I like.
+    - A clickable like icon is displayed on all posts on both desktop and mobile for users to like or unlike posts.
+      <br/><br/>
+
+- #### **Post list page**
+
+  - As a user, I can keep scrolling indefinitely so that I don't have to manually switch pages to view more content.
+    - If there's more than 10 posts and/or comments, scrolling to the bottom of the page automatically renders more content, allowing for infinite scroll.
+  - As a user, I can search with keywords so that I can find the posts I am looking for.
+    - Using the search bar, users can search for posts using keywords which renders posts containing the inputed text in the search bar.
+  - As a user, I can view the most recent posts first in descending order so that I am up to speed with the newest content.
+    - Posts are ordered based on creation date in a descending order.
+  - As a logged in user, I can view the posts I've liked so that I can find the posts I've found interesting.
+    - Clicking the "Liked" link in the navbar displays a list of posts the user has liked.
+  - As a logged in user, I can filter content by profiles I follow so that I can easily view their content.
+    - Clicking the "Feed" link in the navbar displays a list of posts from followed users.
+      <br/><br/>
+
+- ### **Post detail page**
+
+  - As a user, I can view the detailed page of a post so that I can interact with the post in more detail.
+    - Clicking a post takes users to the specific post where users can comment on the post.
+  - As a post creator, I can edit my post so that I can correct mistakes or add new content.
+    - Clicking on a post the user owns, a dropdown menu is found at the top of the post where the user can go to the edit page. There the user can edit what they want and save the post or cancel.
+  - As a post creator, I can delete my post so that I can control the content I want removed.
+    - Clicking on a post the user owns, a dropdown menu is found at the top of the post where the user can choose to delete the post.
+  - As a user, I can read comments on a post so that I can see what people are saying about the content.
+    - Comments are displayed when clicking on a specific post.
+  - As a logged in user, I can comment on a post so that I can engage in conversation about the content.
+    - Click on a post takes the user to this specific post's page, where the user can comment.
+  - As a comment owner, I can edit my comment so that I can correct or add to my existing comment.
+    - A dropdown menu is displayed on comments owned by the user where users can choose to edit the comment.
+  - As a comment owner, I can delete my comment so that I have control of my comments visibility.
+    - A dropdown menu is displayed on comments owned by the user where user can choose to delete the comment.
+  - As a user, I can see when a comment was added so that I know how old a comment is.
+    - The creation date of a comment is shown on all comments. Comments that are edited get their creation date updated. Right now, there's no way to know if a comment has been edited by looking at the time it was added.
+      <br/><br/>
+
+- ### **Profile page**
+
+  - As a user, I can view other profiles so that I can see their content and learn more about them.
+    - Clicking on a profile image or name takes the user to that specific profile page where a bio and stats are displayed.
+  - As a logged in user, I can edit my profile so that I can update my profile picture and bio.
+    - Going to user's own profile pages, there's a dropdown menu at the top where users can choose to go to the edit profile page where they can update their profile picture and bio.
+  - As a logged in user, I can update my username and password so that I can change my display name and password.
+    - Going to user's own profile pages, there's a dropdown menu at the top where users can choose to go to the edit username or password page where they can update their username, unless the username is already taken, or password.
+  - As a logged in user, I can follow or unfollow a profile so that I can decide what profile's content shows in my feed.
+    - On desktop, a list of the most followed profiles are shown with buttons to follow/unfollow. Users can also click the "Feed" link in the navbar to display a list followed user's posts, where they can go to the specific profile and choose to unfollow.
+  - As a user, I can view statistics about a specific profile, such as number of posts and followers so that I can see the details of a particular profile.
+    - On profile pages there's a separate counter each for Posts, Followed and Following.
+  - As a user, I can view all the posts of a specific profile so that I can see their latest content.
+    - On profile pages, that specific profile's posts are listed below the profile header.
+      <br/><br/>
+
+<br/><br/>
