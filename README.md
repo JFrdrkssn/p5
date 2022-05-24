@@ -241,3 +241,52 @@ For this project the GitHub Kanban agile project management tool was used for wo
 The backend API is built specifically for this frontend with Django REST Framework. The repository and info on how the two are connected can be found in the Deployment section of [this](https://github.com/JFrdrkssn/llama-be) repo's README.
 
 <br/><br/>
+
+# **Technologies**
+
+<br/>
+
+## **Languages**
+
+- [HTML](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://www.w3schools.com/js/js_es6.asp)
+  - [JSX](https://reactjs.org/)
+
+<br/>
+
+## **Programs, libraries, frameworks and dependencies**
+
+- [Gitpod](https://gitpod.io)
+  - Gitpod to host a virtual workspace.
+- [Git](https://git-scm.com/)
+  - Git for version control by utilizing the Gitpod terminal to commit and push to GitHub and Heroku.
+- [GitHub](https://github.com/)
+  - GitHub to store the project code after being pushed from Git.
+- [React 17](https://17.reactjs.org/)
+  - React Router for dynamic routing.
+- [Axios](https://axios-http.com/docs/intro)
+  - Axios for promise-based HTTP.
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
+  - React Router for dynamic routing.
+- [JWT](https://jwt.io/)
+  - JWT for tokens and timestamping tokens.
+- [React-Bootstrap 1.6](https://react-bootstrap-v4.netlify.app/)
+  - React-Bootstrap for styling and responsiveness.
+- [Heroku](https://id.heroku.com/login)
+  - Heroku to host both the frontend and backends applications and connect them.
+- [Google Fonts](https://fonts.google.com/)
+  - Google fonts for importing the Indie Flower and Roboto fonts.
+- [Font Awesome](https://fontawesome.com/)
+  - Font Awesome for icons.
+- [Balsamiq](https://balsamiq.com/)
+  - Balsamiq to create wireframes for design purposes.
+- [favicon.io](https://favicon.io/)
+  - favicon to generate favicons.
+- [Canva](https://www.canva.com/)
+  - Canva to create logo and assets.
+- [Coolors](https://coolors.co/?home)
+  - Coolors was used to create the color scheme palette.
+- [MSW](https://mswjs.io/)
+  - MSW for testing purposes.
+    <br/><br/>
