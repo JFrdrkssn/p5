@@ -18,34 +18,45 @@ export const fetchMoreData = async (resource, setResource) => {
 
 export const followHelper = (profile, clickedProfile, following_id) => {
   return profile.id === clickedProfile.id
-    ? {
+    ? // Follow the clicked profile
+      // Increment that profile's followers count and set following id
+      {
         ...profile,
         followers_count: profile.followers_count + 1,
         following_id,
       }
     : profile.is_owner
-    ? {
+    ? // Logged in user profile
+      // Increment the logged in profile's following count
+      {
         ...profile,
         following_count: profile.following_count + 1,
       }
-    : profile;
+    : // If not logged in profile or clicked profile, return unchanged
+      profile;
 };
 
 export const unfollowHelper = (profile, clickedProfile) => {
   return profile.id === clickedProfile.id
-    ? {
+    ? // Unfollow the clicked profile
+      // Decrement that profile's followers count and set following id
+      {
         ...profile,
         followers_count: profile.followers_count - 1,
         following_id: null,
       }
     : profile.is_owner
-    ? {
+    ? // Logged in user profile
+      // Decrement the logged in profile's following count
+      {
         ...profile,
         following_count: profile.following_count - 1,
       }
-    : profile;
+    : // If not logged in profile or clicked profile, return unchanged
+      profile;
 };
 
+// Token handlers
 export const setTokenTimestamp = (data) => {
   const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
   localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp);
